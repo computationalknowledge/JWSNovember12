@@ -4,7 +4,7 @@
 and a step number from the command line arguments:
 Start from the start number, step up by the step number, end at the end number, 
 and sum up all the numbers you step over.
-Out put the sum at the end:
+Output the sum at the end:
 Step 1: acquire/store command line arguments (args)
 Step 2: make an Algorithm to count from start to end stepNumber number: add up all the numbers you step over
 
@@ -18,11 +18,14 @@ public class MainApplication {
     private static int startNumber, endNumber, stepNumber;
     
     public static void main(String[] args) {
+        System.out.println(" starting program ...");
         startNumber = Integer.parseInt(args[0]);
         endNumber = Integer.parseInt(args[1]);
         stepNumber = Integer.parseInt(args[2]);
         
         Calculations c = new Calculations(startNumber, endNumber, stepNumber);
+        System.out.print(" the answer is ");
+        System.out.print(c.DoCalculations());
     }
 
 }
@@ -40,6 +43,10 @@ class Calculations {
     public int DoCalculations() {
         int sum = 0;
         // @TODO implement the summing algorithm
+        
+        for (int i = startNum; i < stopNum; i += stepNum) {
+            sum += stepNum;
+        }
         return sum;
     }
 
